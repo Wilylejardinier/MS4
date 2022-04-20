@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{3BD61E2B-D3F5-4FF3-86A3-58D5233D0423}</ProjectGuid>
+        <ProjectGuid>{98AED035-C505-42EA-AD13-953E8204D497}</ProjectGuid>
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -55,13 +55,13 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <Multithreaded>true</Multithreaded>
         <_TCHARMapping>char</_TCHARMapping>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <SanitizedProjectName>Project1</SanitizedProjectName>
         <ProjectType>CppConsoleApplication</ProjectType>
-        <Multithreaded>true</Multithreaded>
-        <ILINK_LibraryPath>..\..\..\..\Desktop\MS4\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>..\..\..\..\Desktop\MS4\;$(IncludePath)</IncludePath>
+        <SanitizedProjectName>Project1</SanitizedProjectName>
+        <IncludePath>..\MS4\ressources\;..\..\..\..\Desktop\ms4 cb\;..\..\..\..\Desktop\MS4\ressources\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\MS4\ressources\;..\..\..\..\Desktop\ms4 cb\;..\..\..\..\Desktop\MS4\ressources\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
         <FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
@@ -122,12 +122,22 @@
         <BCC_PCHName_Clang>Project1PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="combinec4.cpp">
+            <DependentOn>combinec4.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
         <CppCompile Include="File1.cpp">
-            <BuildOrder>1</BuildOrder>
+            <BuildOrder>4</BuildOrder>
         </CppCompile>
         <PCHCompile Include="Project1PCH1.h">
             <BuildOrder>0</BuildOrder>
         </PCHCompile>
+        <CppCompile Include="SNClientTCP.cpp">
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <None Include="SNClientTCP.h">
+            <BuildOrder>6</BuildOrder>
+        </None>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

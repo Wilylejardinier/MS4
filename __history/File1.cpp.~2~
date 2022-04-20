@@ -1,0 +1,18 @@
+#pragma hdrstop
+#pragma argsused
+#include"SNClientTCP.h"
+#include<iostream>
+#ifdef _WIN32
+#include <tchar.h>
+#else
+  typedef char _TCHAR;
+  #define _tmain main
+#endif
+#include <stdio.h>
+using namespace std;
+int main ()
+{
+	SNClientTCP  monClient; //creation d'un objet monClient de la classe
+}
+
+
