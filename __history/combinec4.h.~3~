@@ -21,5 +21,6 @@ class combinec4
 			 int Vitesse();
 			 int Regime();
 			 char*DonneeCAN(char*id);
-};
 
+
+};
